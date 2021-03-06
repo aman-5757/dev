@@ -10,3 +10,7 @@
 * git add . ( Stage all files )
 * git commit -m "This is my first commit"
 * git push -u origin master
+
+# Mislaneous
+* git remote rm <remote-name> -- to unlink remote (github repository)
+
