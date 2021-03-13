@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p{
+            It will apply to  all tag
+            color: blue;
+        } */
+
+
+        /* ul p{
+            It will find ul and then find p then make changes
+            color: rgb(250, 6, 6);
+        } */
+
+        /* ul>p{
+            It will find immediate descendent
+            color: green;
+        } */
+
+
+        /* .inner{
+            color: yellow;
+        } */
+
+        /* .inner.main{
+            color: violet;
+        } */
+
+        .main{
+            color: brown;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- add css styles to add p tags making it it -->
+    <p>I am Paragraph</p>
+
+    <ul>
+        <li>
+            <p class="inner main">Para 1</p>
+        </li>
+    </ul>
+
+
+    <ul>
+        <p>I am P inside ul and li</p>
+    </ul>
+    <ul>
+        <li><a href="https://www.google.com">Google</a></li>
+        <li>
+            <p class="inner">I am a p Tag inside ul</p>
+        </li>
+    </ul>
+</body>
+</html>
