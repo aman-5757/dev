@@ -3,16 +3,27 @@ const request = require("request");
 const fs = require("fs");
 
 
+let leaderboard = [];
+let count = 0;
 
 function getMatch(link){
-    
+    //async task
+    console.log("Sending Request !!");
+    count++;
     request(link , cb);
 }
 
 // request("https://www.espncricinfo.com/series/ipl-2020-21-1210595/delhi-capitals-vs-mumbai-indians-final-1237181/full-scorecard" , cb);
 
 function cb(error , response , data){
+    console.log("Received Data !!! ");
+    count--;
+
     parseData(data);
+
+    if(count == 0){
+        console.table(leaderboard);
+    }
 }
 
 function parseData(html){
@@ -25,7 +36,7 @@ function parseData(html){
         let teamName = inning.find("h5").text();
         teamName = teamName.split("INNINGS")[0].trim(); 
         // ["Delhi Capitals " , " (20akjsbfkja)"   ];
-        console.log(teamName);
+        // console.log(teamName);
 
         let batsmanTable = inning.find('.table.batsman');
 
@@ -51,41 +62,75 @@ function parseData(html){
 
 
 
-function processLeaderboard(teamName , batsmanName , runs , balls , fours , sixes ){
-    let leaderboard = JSON.parse(fs.readFileSync("./leaderBoard.json"));
-
+function processLeaderboard(teamName, batsmanName, runs, balls, fours, sixes) {
     runs = Number(runs);
     balls = Number(balls);
     fours = Number(fours);
     sixes = Number(sixes);
-
-    if(leaderboard.length){
-        // leaderboard has atleast 1 object
-        for(let i = 0; i<leaderboard.length; i++){
-            let obj = leaderboard[i];
-            if(obj.Team == teamName && obj.Batsman == batsmanName){
-                obj.Runs += runs;
-                obj.Fours += fours;
-                obj.Balls += balls;
-                obj.Sixes += sixes;
-                fs.writeFileSync("./leaderBoard.json", JSON.stringify(leaderboard));
-                return;
-            }
+    if (leaderboard.length) {
+      // leaderboard has atleast 1 object
+      for (let i = 0; i < leaderboard.length; i++) {
+        let obj = leaderboard[i];
+        if (obj.Team == teamName && obj.Batsman == batsmanName) {
+          obj.Runs += runs;
+          obj.Balls += balls;
+          obj.Fours += fours;
+          obj.Sixes += sixes;
+          return;
         }
+      }
     }
-
+    // leaderboard is empty
     let obj = {
-        Team : teamName,
-        Batsman : batsmanName,
-        Runs : runs,
-        Balls : balls,
-        Fours : fours,
-        Sixes : sixes
-    }
+      Team: teamName,
+      Batsman: batsmanName,
+      Runs: runs,
+      Balls: balls,
+      Fours: fours,
+      Sixes: sixes,
+    };
     leaderboard.push(obj);
-    fs.writeFileSync("./leaderBoard.json", JSON.stringify(leaderboard));
+  }
 
-}
+
+
+// when working with json file
+
+// function processLeaderboard(teamName , batsmanName , runs , balls , fours , sixes ){
+//     let leaderboard = JSON.parse(fs.readFileSync("./leaderBoard.json"));
+
+//     runs = Number(runs);
+//     balls = Number(balls);
+//     fours = Number(fours);
+//     sixes = Number(sixes);
+
+//     if(leaderboard.length){
+//         // leaderboard has atleast 1 object
+//         for(let i = 0; i<leaderboard.length; i++){
+//             let obj = leaderboard[i];
+//             if(obj.Team == teamName && obj.Batsman == batsmanName){
+//                 obj.Runs += runs;
+//                 obj.Fours += fours;
+//                 obj.Balls += balls;
+//                 obj.Sixes += sixes;
+//                 fs.writeFileSync("./leaderBoard.json", JSON.stringify(leaderboard));
+//                 return;
+//             }
+//         }
+//     }
+
+//     let obj = {
+//         Team : teamName,
+//         Batsman : batsmanName,
+//         Runs : runs,
+//         Balls : balls,
+//         Fours : fours,
+//         Sixes : sixes
+//     }
+//     leaderboard.push(obj);
+//     fs.writeFileSync("./leaderBoard.json", JSON.stringify(leaderboard));
+
+// }
 
 module.exports = getMatch;
 
