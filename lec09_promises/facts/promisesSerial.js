@@ -9,7 +9,7 @@ const fs = require("fs");
 
 let f1KaPendingPromise = fs.promises.readFile("./f1.txt");
 
-f1KaPendingPromise.then(function(data)){
+f1KaPendingPromise.then(function(data){
     console.log(data+"");
     let f2KaPendingPromise = fs.promises.readFile("./f2.txt");
     f2KaPendingPromise.then(function(data){
@@ -19,4 +19,4 @@ f1KaPendingPromise.then(function(data)){
             console.log(data+"");
         })
     } )
-}
+})
