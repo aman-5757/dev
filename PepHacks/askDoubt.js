@@ -1,7 +1,9 @@
 const puppeteer = require("puppeteer");
-const id = "aman4863@gmail.com";
-const pw = "pepcoder";
-const msg = "Hi! I have doubt in DSA! \n My name is Aman \n Batch: IPU_2 \n Please send me a zoom link!";
+const id = "*************";   //Your Email Here
+const pw = "*************";   //Your Password Here
+const name = "Aman Srivastava";   //Your name here
+const batchName = "DevPP";
+const msg = "Hi! I have doubt in DSA! \n My name is "+ name + "\n Batch: "+ batchName +"\n Please send me a zoom link!";
 let browser;
 (async function(){
   try{
