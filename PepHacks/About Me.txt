@@ -1,0 +1,23 @@
+====================================================================================================================================
+Problem Statement: 
+                "Helping #Pepcoders to get their doubts resolved in a very simple and hassle free way."
+====================================================================================================================================
+Explanation:
+            As a student, I usually get doubts and thanks to pepcoding they provided us *Doubt Support* to get our doubts resolved but for asking a doubt we have to follow the following steps:
+                1. Visit Pepcoding's official website.
+                2. then visit to Login Page.
+                3. then put credentials there and login in into our account.
+                4. then visit to MyClassroom tab.
+                5. then from Drop-Down we have to select Doubts.
+                6. then open tawk.to to get connected to TA Manager.
+                7. then we have to tell our details to get a TA.
+                8. then finally we get a Zoom Link.
+
+                To get rid of all the following steps, I automated this whole process with help of "Puppeteer" and along with this automation I also created a batch file with will execute our automation code by itself.
+
+====================================================================================================================================
+Result: To ask a doubt you just have to double click on the askDoubt.cmd file.
+        You may make a shortcut of askDoubt.cmd at your desktop so that you can get your doubts resolved at JUST 2 CLICKS!
+
+====================================================================================================================================
+#PepCoder!
