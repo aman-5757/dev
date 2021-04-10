@@ -1,8 +1,8 @@
 const puppeteer = require("puppeteer");
 const id = "*************";   //Your Email Here
 const pw = "*************";   //Your Password Here
-const name = "Aman Srivastava";   //Your name here
-const batchName = "DevPP";
+const name = "Aman Srivastava";   //Your Name here
+const batchName = "DevPP";        //Your Batch Name here
 const msg = "Hi! I have doubt in DSA! \n My name is "+ name + "\n Batch: "+ batchName +"\n Please send me a zoom link!";
 let browser;
 (async function(){
