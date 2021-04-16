@@ -1,8 +1,15 @@
 const puppeteer = require("puppeteer");
+<<<<<<< HEAD
 const id = "aman4863@gmail.com";   //Your Email Here
 const pw = "dingdong";   //Your Password Here
 const name = "Aman Srivastava";   //Your name here
 const batchName = "DevPP";
+=======
+const id = "*************";   //Your Email Here
+const pw = "*************";   //Your Password Here
+const name = "Aman Srivastava";   //Your Name here
+const batchName = "DevPP";        //Your Batch Name here
+>>>>>>> bf6d2ca8fd63f70ae90c92783cf6f37651d9e74b
 const msg = "Hi! I have doubt in DSA! \n My name is "+ name + "\n Batch: "+ batchName +"\n Please send me a zoom link!";
 let browser;
 (async function(){
