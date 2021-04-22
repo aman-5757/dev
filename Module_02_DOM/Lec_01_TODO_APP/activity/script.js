@@ -29,6 +29,9 @@ function addTodo(){
         todosList.append(listItem);
         todoInput.value = "";
     }
+    else{
+        alert("You Haven't Entered any ToDo!!");
+    }
 }
 
 

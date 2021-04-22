@@ -1,0 +1,19 @@
+*{
+    
+}
+
+.header-box{
+    background: grey;
+    height: 80px;
+}
+
+.content-box{
+    background: palevioletred;
+    height: 500px;
+}
+
+.color-select-box{
+    width: 200px;
+    height: 10px;
+    background-color: black;
+}
