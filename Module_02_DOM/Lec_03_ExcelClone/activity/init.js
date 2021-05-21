@@ -38,6 +38,7 @@ function initDB(){
                 name:name,
                 value:"",
                 formula:""
+                childrens:[]
             }
             row.push(cellObject);
         }

@@ -1,4 +1,4 @@
-function solveFormula(formula){
+function solveFormula(formula, selfCellObject){
     // "( A1 + A2 )" => "( 10 + 20 )"
     let formulaComps = formula.split(" ");
     // ["(" , "A1" , "+" , "A2" , ")"];
@@ -12,6 +12,12 @@ function solveFormula(formula){
             let {rowId , colId} = getRowIdColIdFromAddress(formComp);   
             let cellObject = db[rowId][colId];
             let value = cellObject.value;
+
+            if(selfCellObject){
+                // push yourself in the childrens of formula Components cellObject
+                cellObject.childrens.push(selfCellObject.name);
+            }
+
             formula = formula.replace(formComp , value);
         }
     }
