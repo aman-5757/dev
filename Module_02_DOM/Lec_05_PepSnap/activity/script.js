@@ -36,12 +36,12 @@ let mediaRecorder;
         if(recordingState){
             //stop the recording
             mediaRecorder.stop();
-            recordButton.innerHTML = "Record";
+            recordButton.querySelector("div").classList.remove("record-animate");
         }
         else{
             //start the recording
             mediaRecorder.start();
-            recordButton.innerHTML = "Recording";
+            recordButton.querySelector("div").classList.add("record-animate");
         }
         recordingState = !recordingState;
     })
@@ -71,6 +71,10 @@ function saveVideoToFs(){
 }
 
 function capturePhotos(){
+    photoButton.querySelector("div").classList.add("capture-animate");
+    setTimeout(function(){
+        photoButton.querySelector("div").classList.remove("capture-animate");
+    },1000);
     let canvas = document.createElement("canvas");
     canvas.height = videoPlayer.videoHeight;
     canvas.width = videoPlayer.videoWidth;
