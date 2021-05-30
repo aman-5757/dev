@@ -13,7 +13,7 @@ dbOpenRequest.onsuccess = function(e){
 
 function saveMedia(mediaType, mediaSource){
     let txn = db.transaction("Media", "readwrite");
-    let mediaStore = txn.ObjectStore("Media");
+    let mediaStore = txn.objectStore("Media");
     let mediaFile = {
         mid : Date.now(),
         mediaType,

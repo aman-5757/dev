@@ -129,7 +129,6 @@ function capturePhotos(){
         if(db){
             saveMedia("image", imageUrl);
             clearInterval(iv);
-
         }
     },100);
 
