@@ -10,8 +10,28 @@
 <body>
     <div class="tools-content">
         <div class="tools">
-            <div class="tool" id="pencil"><img src="./icons/Black_Pencil.svg" /></div>
-            <div class="tool" id="eraser"><img src="./icons/Eraser.svg" /></div>
+            <div class="tool" id="pencil">
+                <img src="./icons/Black_Pencil.svg" />
+                <div class="tool-options hide">
+                    <div class="pencil-size">
+                        <input type="range" value="1" min="1" max="40">
+                    </div>
+                    <div class="pencil-colors">
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                        <div class="blue"></div>
+                        <div class="black"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool" id="eraser">
+                <img src="./icons/Eraser.svg" />
+                <div class="tool-options hide">
+                    <div class="eraser-size">
+                        <input type="range" value="1" min="1" max="40">
+                    </div>
+                </div>
+            </div>
             <div class="tool" id="undo"><img src="./icons/Undo.svg" /></div>
             <div class="tool" id="redo"><img src="./icons/Redo.svg" /></div>
             <div class="tool" id="sticky"><img src="./icons/StickyNote.svg" /></div>
@@ -24,5 +44,6 @@
       </div>
       <script src="./script.js"></script>
       <script src="./tools.js"></script>
+      <script src="./undoRedo.js"></script>
 </body>
 </html>
